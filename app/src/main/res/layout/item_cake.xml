@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_item"
+    android:layout_margin="18dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:padding="15dp"
+        android:id="@+id/iv_cakes"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="20dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        tools:text="NAME"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/iv_cakes"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_descrition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Descritpion"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toStartOf="@id/iv_cakes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="20dp"
+        tools:text="Price"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/iv_cakes"
+        app:layout_constraintTop_toTopOf="@id/tv_descrition"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
