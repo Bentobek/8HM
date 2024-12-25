@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="410dp"
-        android:layout_height="300dp"
+        android:layout_height="500dp"
         android:id="@+id/fragment_container" />
 
     <androidx.fragment.app.FragmentContainerView
