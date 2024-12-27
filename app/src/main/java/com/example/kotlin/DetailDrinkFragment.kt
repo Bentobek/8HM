@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.kotlin.databinding.FragmentDetailDrinkBinding
 import kotlinx.coroutines.GlobalScope
@@ -26,12 +27,15 @@ class DetailDrinkFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null){
-            val args: Drinks = requireArguments().getSerializable("drink") as Drinks
+            val args = DetailDrinkFragmentArgs.fromBundle(requireArguments())
         binding.tvName.text = args.nameDrink
         binding.tvDescrition.text = args.descDrink
         binding.tvPrice.text = args.price
         Glide.with(requireContext()).load(args.imageDrinks).into(binding.ivDrinks)
     }
+        binding.btnBack.setOnClickListener(){
+            findNavController().navigateUp()
+        }
         binding.callButton.setOnClickListener {
             val phoneNumber = "+996705002366"
             val intent = Intent(Intent.ACTION_DIAL).apply {

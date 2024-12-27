@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.kotlin.databinding.FragmentDeteilBinding
 
@@ -26,11 +27,14 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
-            val args = arguments!!.getSerializable("cakes") as Cakes
+            val args = DetailFragmentArgs.fromBundle(requireArguments())
             binding.tvName.text = args.name
-            binding.tvDescrition.text = args.desc
+            binding.tvDescrition.text = args.descr
             binding.tvPrice.text = args.price
             Glide.with(requireContext()).load(args.image).into(binding.ivCakes)
+        }
+        binding.btnBack.setOnClickListener(){
+            findNavController().navigateUp()
         }
             binding.callButton.setOnClickListener {
                 val phoneNumber = "+996705002366"

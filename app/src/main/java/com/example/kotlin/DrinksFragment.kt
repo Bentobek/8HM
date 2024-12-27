@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.kotlin.databinding.FragmentDrinksBinding
 
 class DrinksFragment : Fragment() {
@@ -27,11 +28,8 @@ class DrinksFragment : Fragment() {
 
     private fun initRV() {
         drinksAdapter = DrinksAdapter(drinksList){
-            val bundle = Bundle()
-            bundle.putSerializable("drink", drinksList[it])
-            val detaildrinkFragment = DetailDrinkFragment()
-            detaildrinkFragment.arguments = bundle
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.drinks_fragment_container,detaildrinkFragment).addToBackStack(null).commit()
+            findNavController().navigate( DrinksFragmentDirections.actionDrinksFragmentToDetailDrinkFragment(imageDrinks = drinksList[it].imageDrinks, nameDrink = drinksList[it].nameDrink, descDrink = drinksList[it].descDrink, price = drinksList[it].price))
+//            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.drinks_fragment_container,detaildrinkFragment).addToBackStack(null).commit()
         }
         binding.rvDrinks.adapter = drinksAdapter
     }
