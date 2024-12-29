@@ -28,31 +28,11 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
             val args = DetailFragmentArgs.fromBundle(requireArguments())
-            binding.tvName.text = args.name
-            binding.tvDescrition.text = args.descr
-            binding.tvPrice.text = args.price
             Glide.with(requireContext()).load(args.image).into(binding.ivCakes)
         }
         binding.btnBack.setOnClickListener(){
             findNavController().navigateUp()
         }
-            binding.callButton.setOnClickListener {
-                val phoneNumber = "+996705002366"
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                    data = Uri.parse("tel:$phoneNumber")
-                }
-                startActivity(intent)
-            }
-
-            binding.whatsappButton.setOnClickListener {
-                val phoneNumber = "+996705002366"
-                val url = "https://api.whatsapp.com/send?phone=$phoneNumber"
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(url)
-                }
-                startActivity(intent)
-            }
-
         }
     }
 

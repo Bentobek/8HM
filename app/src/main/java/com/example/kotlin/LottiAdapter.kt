@@ -1,20 +1,16 @@
 package com.example.kotlin
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kotlin.databinding.ItemCakeBinding
 
-class CakesAdapter(val cakesList: ArrayList<Cakes>, val listener:(position: Int) -> Unit) : RecyclerView.Adapter<CakesAdapter.CakesViewHolder>() {
+class   LottiAdapter(val lotttiList: ArrayList<Lottti>, val listener:(position: Int) -> Unit) : RecyclerView.Adapter<LottiAdapter.CakesViewHolder>() {
     inner class CakesViewHolder(val binding: ItemCakeBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(cakes: Cakes){
+        fun bind(lottti: Lottti){
             binding.apply{
-                tvName.text = cakes.name
-                tvDescrition.text = cakes.desc
-                tvPrice.text = cakes.price
-                Glide.with(itemView).load(cakes.image).into(ivCakes)
+                Glide.with(itemView).load(lottti.image).into(ivCakes)
             }
         }
     }
@@ -25,14 +21,14 @@ class CakesAdapter(val cakesList: ArrayList<Cakes>, val listener:(position: Int)
     }
 
     override fun onBindViewHolder(holder: CakesViewHolder, position: Int) {
-        holder.bind(cakesList[position ])
+        holder.bind(lotttiList[position ])
         holder.itemView.setOnClickListener {
             listener(position)
         }
      }
 
     override fun getItemCount(): Int {
-        return cakesList.size
+        return lotttiList.size
     }
 
 }

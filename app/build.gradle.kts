@@ -34,12 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
-        viewBinding = true
-    }
+                                                                            buildFeatures{
+                                                                                viewBinding = true
+                                                                            }
 }
+val lottieVersion = "3.4.0"
 val nav_version = "2.8.4"
 dependencies {
+    implementation ("com.airbnb.android:lottie:$lottieVersion")
     implementation ("androidx.navigation:navigation-fragment:$nav_version")
     implementation ("androidx.navigation:navigation-ui:$nav_version")
     implementation ("com.github.bumptech.glide:glide:4.16.0")

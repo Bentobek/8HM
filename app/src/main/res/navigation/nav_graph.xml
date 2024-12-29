@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/RVFragment">
+    app:startDestination="@id/LottiFragment">
 
     <fragment
-        android:id="@+id/RVFragment"
+        android:id="@+id/LottiFragment"
         android:name="com.example.kotlin.RVFragment"
-        android:label="fragment_r_v"
+        android:label="fragment_lotti"
         tools:layout="@layout/fragment_r_v" >
         <action
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_RVFragment_to_detailFragment"
+            android:id="@+id/action_LottiFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
@@ -25,18 +25,6 @@
         tools:layout="@layout/fragment_deteil">
         <argument
             android:name="image"
-            app:argType="string"
-            android:defaultValue="Default"/>
-        <argument
-            android:name="name"
-            app:argType="string"
-            android:defaultValue="Default"/>
-        <argument
-            android:name="descr"
-            app:argType="string"
-            android:defaultValue="Default"/>
-        <argument
-            android:name="price"
             app:argType="string"
             android:defaultValue="Default"/>
     </fragment>
